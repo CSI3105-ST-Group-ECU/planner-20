@@ -36,3 +36,5 @@ After pushing that code go to git to make pull request (pr):
 3. In the compare drop down click and find the branch you want to merge
 4. If its all good click on create pull request
 5. There is no restrictions on master so anyone can push and merge
+
+Jake: I am trying to do my first pull request lol ignore this :)
