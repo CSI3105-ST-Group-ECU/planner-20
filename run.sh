@@ -1,4 +1,3 @@
-javac *.java -d bin
+javac src/au/edu/sccs/csp3105/NBookingPlanner/*.java -d bin
 ## works better this way :D
-cd bin
-java au.edu.sccs.csp3105.NBookingPlanner.Planner
+java -cp bin au.edu.sccs.csp3105.NBookingPlanner.Planner
