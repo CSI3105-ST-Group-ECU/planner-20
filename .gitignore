@@ -41,6 +41,7 @@ tmp/
 local.properties
 .loadpath
 .factorypath
+target/
 
 ##############################
 ## Visual Studio Code
