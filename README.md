@@ -1,15 +1,33 @@
 # Planner-20
 Repo for software testing
 
-## To set path for java:
-https://explainjava.com/java-path/
+## Dependencies
 
-## Getting Started
-Step 1) Clone repo using your favourite git client  
+1. To set path for java 1.8 https://explainjava.com/java-path/
+2. Will need those jar files for Junit 5 and Mockito 
+
+## Running in console or terminal
+Step 1) Clone repo using your favorite git client  
 Step 2) Open console or terminal and cd to repo directory  
-Step 3) type in: 
+Step 3) type in either: 
 
     run.sh 
+    run.bat
+
+## Getting Started with Eclipse
+
+1. Import repo into Eclipse (may need to do the following )
+2. Right Click src, then click build path > use as source folder
+3. Right click src, then click build path > configure output folder. Select default for me was target.
+4. To add the jar files clone this repo: https://github.com/CSI3105-ST-Group-ECU/lib
+5. Create a folder called lib
+6. Select all the jar files and right click then click build path > add to build path
+7. Now should be ready to run both the tests and main method
+
+## Getting started with Intellij
+
+
+
 
 ## What they dont teach you at uni.... Git
 Follow this guide and you be fine :D, some ide's have git but you can always download git bash for windows, however you can use https://git-fork.com/ which was recommended by my boss as its good for noobs like us.
