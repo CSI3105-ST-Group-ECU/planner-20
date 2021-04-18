@@ -1,4 +1,4 @@
-package test.black.box;
+package black.box;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -21,5 +21,4 @@ class BookingsAssociatedWith30thNovTests {
 	void test() {
 		fail("Not yet implemented");
 	}
-
 }
