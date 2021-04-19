@@ -1,4 +1,4 @@
-package black.box;
+package unitTesting;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -6,8 +6,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
-class BookingsAssociatedWith30thNovTests {
+class MeetingTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
@@ -21,4 +20,5 @@ class BookingsAssociatedWith30thNovTests {
 	void test() {
 		fail("Not yet implemented");
 	}
+
 }
