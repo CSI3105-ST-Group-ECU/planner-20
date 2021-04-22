@@ -73,7 +73,26 @@ public class ConsoleOutput {
     private static final String VALID_CHECK_ROOM_OUTPUT = "";
     private static final String VALID_CHECK_PERSON_OUTPUT = "";
     private static final String VALID_CHECK_AGENDA_FOR_ROOM_OUTPUT = "";
-    private static final String VALID_CHECK_AGENDA_FOR_PERSON_OUTPUT = "";
+    private static final String VALID_CHECK_AGENDA_FOR_PERSON_OUTPUT = "\n"
+    		+ "Enter the month (1-12): \n"
+    		+ "\n"
+    		+ "Enter the day (1-31), or all to see the whole month: \n"
+    		+ "Which of the following people are you interested in?\n"
+    		+ "Justin Gardener\n"
+    		+ "Ashley Matthews\n"
+    		+ "Mary Jane Cook\n"
+    		+ "Rose Austin\n"
+    		+ "Mike Smith\n"
+    		+ "Helen West\n"
+    		+ "Steven Lewis\n"
+    		+ "Edith Cowan\n"
+    		+ "Mark Colin\n"
+    		+ "Jacquie Martin\n"
+    		+ "Jaci Johnston\n"
+    		+ "Travis Colin\n"
+    		+ "Ashley Martin\n"
+    		+ "\n"
+    		+ "Enter a name from the list provided, or cancel to cancel the request: \n";
 
     public static String getValidScheduledMeetingOutput() {
         return VALID_SCHEDULED_MEETING_OUTPUT;
