@@ -43,9 +43,7 @@ public class ConsoleOutput {
             "\n" +
             "Enter a person's name, or done if finished: \n" +
             "\n" +
-            "Enter a description for the meeting: \n" +
-            "\n" +
-            "\n";
+            "Enter a description for the meeting: \n";
 
     private static final String VALID_BOOK_VACATIONS_OUTPUT = "\n" +
             "Enter the month that the vacation starts (1-12): \n" +
@@ -70,10 +68,7 @@ public class ConsoleOutput {
             "Travis Colin\n" +
             "Ashley Martin\n" +
             "\n" +
-            "Enter a person's name, or cancel to cancel the request: \n" +
-            "\n" +
-            "\n";
-
+            "Enter a person's name, or cancel to cancel the request: \n";
     //TODO: Check if these are needed by the others if not I will remove 🚀🚀🚀🚀
     private static final String VALID_CHECK_ROOM_OUTPUT = "";
     private static final String VALID_CHECK_PERSON_OUTPUT = "";
