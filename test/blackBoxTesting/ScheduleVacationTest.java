@@ -5,33 +5,32 @@ package blackBoxTesting;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import au.edu.sccs.csp3105.NBookingPlanner.Planner;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 /**
- * @author Jack
+ * @author Jake 🚀🚀🚀🚀
  *
  */
-class checkAgendaRoomTest {
+class ScheduleVacationTest {
+	Planner planner;
 
-	/**
-	 * @throws java.lang.Exception
-	 */
 	@BeforeEach
-	void setUp() throws Exception {
+	void setUp() {
+		planner = Mockito.spy(Planner.class);
+		Mockito.doNothing().when(planner).mainMenu();
 	}
 
-	/**
-	 * @throws java.lang.Exception
-	 */
 	@AfterEach
-	void tearDown() throws Exception {
+	void tearDown() {
+		planner = null;
 	}
 
 	@Test
 	void test() {
 		fail("Not yet implemented");
 	}
-
 }

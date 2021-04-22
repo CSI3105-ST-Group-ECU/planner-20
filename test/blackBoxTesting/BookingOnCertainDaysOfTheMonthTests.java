@@ -14,6 +14,7 @@ import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
+@Deprecated
 class BookingOnCertainDaysOfTheMonthTests {
 
     Planner planner;
