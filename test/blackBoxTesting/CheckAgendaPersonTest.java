@@ -5,6 +5,7 @@ package blackBoxTesting;
 
 import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOutNormalized;
 import static com.github.stefanbirkner.systemlambda.SystemLambda.withTextFromSystemIn;
+import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.*;
 
 import au.edu.sccs.csp3105.NBookingPlanner.Planner;
@@ -77,7 +78,7 @@ class CheckAgendaPersonTest {
 
 	@Tag("28Days")
     @DisplayName("PersonAgenda_invalidDays_MonthsOf28Days")
-    @ParameterizedTest(name = "#{index}- Valid Test with Argument = {arguments}")
+    @ParameterizedTest(name = "#{index}- Invalid Test with Argument = {arguments}")
     @CsvSource({
             "2,0,Justin Gardener",// Boundary Testing for Invalid Inputs (0 and 29) for months of 28 Days
             "2,29,Justin Gardener",
@@ -122,7 +123,7 @@ class CheckAgendaPersonTest {
 	
 	@Tag("29Days")
     @DisplayName("PersonAgenda_InvalidDays_MonthsOf29Days")
-    @ParameterizedTest(name = "#{index}- Valid Test with Argument = {arguments}")
+    @ParameterizedTest(name = "#{index}- Invalid Test with Argument = {arguments}")
     @CsvSource({
             "2,0,Justin Gardener",
             "2,30,Justin Gardener",
@@ -171,7 +172,7 @@ class CheckAgendaPersonTest {
 	
 	@Tag("30Days")
     @DisplayName("PersonAgenda_InvalidDays_MonthsOf30Days")
-    @ParameterizedTest(name = "#{index}- Valid Test with Argument = {arguments}")
+    @ParameterizedTest(name = "#{index}- Invalid Test with Argument = {arguments}")
     @CsvSource({
     //BVA Test cases for April and September   
             "4,0,Justin Gardener",
@@ -194,7 +195,7 @@ class CheckAgendaPersonTest {
     }
 	
 	@Tag("31Days")
-    @DisplayName("PersonAgenda_ValidDays_MonthsOf30Days")
+    @DisplayName("PersonAgenda_ValidDays_MonthsOf31Days")
     @ParameterizedTest(name = "#{index}- Valid Test with Argument = {arguments}")
     @CsvSource({
 	//Create test cases for March and October, which have 31 days
@@ -222,8 +223,8 @@ class CheckAgendaPersonTest {
     }
 	
 	@Tag("31Days")
-    @DisplayName("PersonAgenda_InvalidDays_MonthsOf30Days")
-    @ParameterizedTest(name = "#{index}- Valid Test with Argument = {arguments}")
+    @DisplayName("PersonAgenda_InvalidDays_MonthsOf31Days")
+    @ParameterizedTest(name = "#{index}- Invalid Test with Argument = {arguments}")
     @CsvSource({
     //BVA Test cases for April and September   
             "3,0,Justin Gardener",
@@ -232,8 +233,8 @@ class CheckAgendaPersonTest {
             "10,32,Justin Gardener",
     })
 	
-	@Order(8)
-	void PersonAgenda_InvalidDaysMonthsOf31Days(String start_month, String start_day, String name) throws Exception {
+	@Order(9)
+	void PersonAgenda_InvalidInput(String start_month, String start_day, String name) throws Exception {
         String notExpected = ConsoleOutput.getValidCheckAgendaForPersonOutput();
 
         String actual = tapSystemOutNormalized(() -> withTextFromSystemIn(
