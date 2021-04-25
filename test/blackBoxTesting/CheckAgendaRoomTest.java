@@ -194,6 +194,49 @@ class CheckAgendaRoomTest {
 		assertNotEquals(expected, actual, "\n[ERROR][MONTH = "+month+", DAY = "+month+"] No error message thrown for Invalid Input.\n");
 	}
 
+	@DisplayName("Room_Valid_Rooms")
+	@ParameterizedTest(name = "#{index}- Test with Argument = {arguments}")
+	@CsvSource({
+			"1, 1, JO18.330",
+			"1, 1, JO7.221",
+			"1, 1, JO15.236",
+			"1, 1, JO1.230",
+			"1, 1, JO34.536",
+			"1, 1, JO19.230",
+			"1, 1, ML5.123",
+			"1, 1, ML18.330",
+			"1, 1, ML21.520",
+			"1, 1, ML13.213",
+			"1, 1, ML21.310",
+			"1, 1, ML13.218"
+	})
+	@Order(5)
+	void ROOM_ValidRooms(String month, String day, String room) throws Exception {
+		String expected = ConsoleOutput.getValidCheckAgendaForRoomOutput();
 
+		String actual = tapSystemOutNormalized(() -> withTextFromSystemIn(
+				month, day, room).execute(() -> planner.checkAgendaRoom()));
+
+		assertEquals(expected, actual, "\n[ERROR][ROOM = "+room+"] Unexpected result for valid Input.\n");
+	}
+
+	@DisplayName("Room_Invalid_Rooms")
+	@ParameterizedTest(name = "#{index}- Test with Argument = {arguments}")
+	@CsvSource({
+			"1, all, ml13.218",
+			"1, all, 1234",
+			"1, all, abcd",
+			"1, all, ",
+			"1, all, ML15.215"
+	})
+	@Order(6)
+	void ROOM_InvalidRooms(String month, String day, String room) throws Exception {
+		String expected = ConsoleOutput.getValidCheckAgendaForRoomRoomDoesNotExist();
+
+		String actual = tapSystemOutNormalized(() -> withTextFromSystemIn(
+				month, day, room).execute(() -> planner.checkAgendaRoom()));
+
+		assertEquals(expected, actual, "\n[ERROR][ROOM = "+room+"] No error message thrown for Invalid Input.\n");
+	}
 
 }
