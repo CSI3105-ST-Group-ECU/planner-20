@@ -29,7 +29,7 @@ class CheckEmployeeAvailabilityTest {
 		planner = null;
 	}
 
-	@DisplayName("Employee_Availability_Month")
+	@DisplayName("EmployeeAvailability BA: Month valid")
 	@ParameterizedTest(name = "#{index}- Test with Argument = {arguments}")
 	@CsvSource({
 			"1, 1, 1, 2",
@@ -47,7 +47,7 @@ class CheckEmployeeAvailabilityTest {
 		assertEquals(expected, actual,  "\n[ERROR][MONTH = "+month+"] Unexpected result for valid Input.\n");
 	}
 
-	@DisplayName("Employee_Availability_Month")
+	@DisplayName("EmployeeAvailability BA: Month invalid")
 	@ParameterizedTest(name = "#{index}- Test with Argument = {arguments}")
 	@CsvSource({
 			"0, 1, 1, 2",
@@ -63,7 +63,7 @@ class CheckEmployeeAvailabilityTest {
 		assertEquals(expected, actual,  "\n[ERROR][MONTH = "+month+"] No error message thrown for Invalid Input.\n");
 	}
 
-	@DisplayName("Employee_Availability_Days")
+	@DisplayName("EmployeeAvailability BA: Days valid")
 	@ParameterizedTest(name = "#{index}- Test with Argument = {arguments}")
 	@CsvSource({
 			//january
@@ -138,7 +138,7 @@ class CheckEmployeeAvailabilityTest {
 		assertEquals(expected, actual,  "\n[ERROR][MONTH = "+month+", DAY = "+day+"] Unexpected result for valid Input.\n");
 	}
 
-	@DisplayName("Employee_Availability_Days")
+	@DisplayName("EmployeeAvailability BA: Days invalid")
 	@ParameterizedTest(name = "#{index}- Test with Argument = {arguments}")
 	@CsvSource({
 			//january
@@ -188,7 +188,7 @@ class CheckEmployeeAvailabilityTest {
 		assertEquals(expected, actual,  "\n[ERROR][MONTH = "+month+", DAY = "+day+"] No error message thrown for Invalid Input.\n");
 	}
 
-	@DisplayName("Employee_Availability_Start_Time")
+	@DisplayName("EmployeeAvailability BA: StartTime valid")
 	@ParameterizedTest(name = "#{index}- Test with Argument = {arguments}")
 	@CsvSource({
 			"1, 1, 0, 1",
@@ -206,7 +206,7 @@ class CheckEmployeeAvailabilityTest {
 		assertEquals(expected, actual,  "\n[ERROR][MONTH = "+month+", DAY = "+day+", START TIME = "+startTime+"] Unexpected result for valid Input.\n");
 	}
 
-	@DisplayName("Employee_Availability_Start_Time")
+	@DisplayName("EmployeeAvailability BA: StartTime invalid")
 	@ParameterizedTest(name = "#{index}- Test with Argument = {arguments}")
 	@CsvSource({
 			"1, 1, -1, 1",
@@ -222,7 +222,7 @@ class CheckEmployeeAvailabilityTest {
 		assertEquals(expected, actual,  "\n[ERROR][MONTH = "+month+", DAY = "+day+", START TIME = "+startTime+"] No error message thrown for Invalid Input.\n");
 	}
 
-	@DisplayName("Employee_Availability_End_Time")
+	@DisplayName("EmployeeAvailability BA: EndTime valid")
 	@ParameterizedTest(name = "#{index}- Test with Argument = {arguments}")
 	@CsvSource({
 			"1, 1, 0, 1",
@@ -240,7 +240,7 @@ class CheckEmployeeAvailabilityTest {
 		assertEquals(expected, actual,  "\n[ERROR][MONTH = "+month+", DAY = "+day+", START TIME = "+startTime+", END TIME = "+endTime+"] Unexpected result for valid Input.\n");
 	}
 
-	@DisplayName("Employee_Availability_End_Time")
+	@DisplayName("EmployeeAvailability BA: EndTime invalid")
 	@ParameterizedTest(name = "#{index}- Test with Argument = {arguments}")
 	@CsvSource({
 			"1, 1, 0, 0",
@@ -256,7 +256,7 @@ class CheckEmployeeAvailabilityTest {
 		assertEquals(expected, actual,  "\n[ERROR][MONTH = "+month+", DAY = "+day+", START TIME = "+startTime+", END TIME = "+endTime+"] No error message thrown for Invalid Input.\n");
 	}
 
-	@DisplayName("Employee_TIME_VALIDITY")
+	@DisplayName("EmployeeAvailability E: Time Validity")
 	@ParameterizedTest(name = "#{index}- Test with Argument = {arguments}")
 	@CsvSource({
 			"1, 1, 10, 11",
@@ -271,7 +271,7 @@ class CheckEmployeeAvailabilityTest {
 		assertEquals(expected, actual,  "\n[ERROR][MONTH = "+month+", DAY = "+day+", START TIME = "+startTime+", END TIME = "+endTime+"] Unexpected result for valid Input.\n");
 	}
 
-	@DisplayName("Employee_TIME_VALIDITY")
+	@DisplayName("EmployeeAvailability E: Time Validity")
 	@ParameterizedTest(name = "#{index}- Test with Argument = {arguments}")
 	@CsvSource({
 			"1, 1, 11, 11",
