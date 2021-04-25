@@ -36,11 +36,11 @@ class ScheduleMeetingTest {
 	@DisplayName("Valid Scheduled Meeting Tests \uD83D\uDC4D")
 	@ParameterizedTest(name = "#{index}- Valid Test with Argument={arguments}")
 	@CsvSource({
-			"1,1,0,0,cancel,Mark Colin,done,Happy Days",       //SM_01 - B
-			"2,2,1,1,JO18.330,Mark Colin,done,Happy Days",     //SM_02 - B
+			"1,1,0,1,JO18.330,Mark Colin,done,Happy Days",     //SM_01 - B
+			"2,2,1,2,JO18.330,Mark Colin,done,Happy Days",     //SM_02 - B
 			"2,29,9,10,JO18.330,Mark Colin,done,Happy Days",   //SM_03 - E
-			"11,30,22,22,JO18.330,Mark Colin,done,Happy Days", //SM_04 - B
-			"12,31,23,23,JO18.330,Mark Colin,done,Happy Days", //SM_05 - B
+			"11,30,21,22,JO18.330,Mark Colin,done,Happy Days", //SM_04 - B
+			"12,31,22,23,JO18.330,Mark Colin,done,Happy Days", //SM_05 - B
 	})
 	void ValidSchedulingAMeetingTest(String start_month, String start_day, String start_hour,
 													   String end_hour, String room_id, String name, String done,
@@ -93,37 +93,4 @@ class ScheduleMeetingTest {
 
 		assertNotEquals(expected, actual);
 	}
-
-	/*
-	//TODO: May need to do this manually and delete this
-	@Tag("BB-SM")
-	@DisplayName("More Invalid Scheduled Meeting Case Sensitive Tests \uD83D\uDC4E")
-	@ParameterizedTest(name = "#{index}- Invalid Test with Argument={arguments}")
-	@CsvSource({
-			"1,2,22,23,jo18.330,Mark Colin,done,Happy Days", 			//SM_15 - E
-			"1,2,1,2,Cancel,Mark Collin,done,Happy Days",				//SM_16 - E
-			"1,2,22,23,JO18.330,mark colin,done,Happy Days",   			//SM_17 - E
-			"1,2,22,23,JO18.330,Mark Colin,Done,Happy Days",   			//SM_18 - E
-	})
-	void InvalidSchedulingAMeetingWithCaseSensitiveTest(String start_month, String start_day, String start_hour,
-									   String end_hour, String room_id, String name, String done,
-									   String desc String lower_case) {
-
-		String expected = ConsoleOutput.getValidScheduledMeetingOutput();
-		assertDoesNotThrow(() ->
-		{
-			String actual = tapSystemOutNormalized(() -> withTextFromSystemIn(
-					start_month,
-					start_day,
-					start_hour,
-					end_hour,
-					room_id,
-					name,
-					done,
-					desc,
-			).execute(() -> planner.scheduleMeeting()));
-
-			assertNotEquals(expected, actual);
-		});
-	}*/
 }
