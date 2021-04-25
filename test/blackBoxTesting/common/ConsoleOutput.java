@@ -94,6 +94,14 @@ public class ConsoleOutput {
     		+ "\n"
     		+ "Enter a name from the list provided, or cancel to cancel the request: \n";
 
+    private static final String INVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_MONTH = "\n"
+    		+ "Enter the month (1-12): ";
+    
+    private static final String INVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_DAY = " ";
+    private static final String INVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_PERSON = " ";
+    
+//THESE ARE THE GETTERS FOR THE SOFTWARE
+    
     public static String getValidScheduledMeetingOutput() {
         return VALID_SCHEDULED_MEETING_OUTPUT;
     }
@@ -108,6 +116,10 @@ public class ConsoleOutput {
 
     public static String getValidCheckPersonOutput() {
         return VALID_CHECK_PERSON_OUTPUT;
+    }
+    
+    public static String getINVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_MONTH() {
+        return INVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_MONTH;
     }
 
     public static String getValidCheckAgendaForRoomOutput() {

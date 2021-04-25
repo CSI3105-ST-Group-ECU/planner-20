@@ -221,20 +221,20 @@ class CheckAgendaPersonTest {
         assertNotEquals(notExpected, actual);
     }
 	
-	@Tag("31Days")
-    @DisplayName("PersonAgenda_InvalidDays_MonthsOf31Days")
+	@Tag("InvalidMonth")
+    @DisplayName("PersonAgenda_InvalidMonth")
     @ParameterizedTest(name = "#{index}- Invalid Test with Argument = {arguments}")
     @CsvSource({
     //BVA Test cases for April and September   
-            "3,0,Justin Gardener",
-            "3,32,Justin Gardener",
-            "10,0,Justin Gardener",
-            "10,32,Justin Gardener",
+    	"A,	2,	Justin Gardener",
+    	"B,	2,	Justin Gardener",
+    	"C,	2,	Justin Gardener",
+
     })
 	
-	@Order(9)
+	@Order(8)
 	void PersonAgenda_InvalidInput(String start_month, String start_day, String name) throws Exception {
-        String notExpected = ConsoleOutput.getValidCheckAgendaForPersonOutput();
+        String Expected = ConsoleOutput.getINVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_MONTH();
 
         String actual = tapSystemOutNormalized(() -> withTextFromSystemIn(
                 start_month,
@@ -242,6 +242,6 @@ class CheckAgendaPersonTest {
                 name
         ).execute(() -> planner.checkAgendaPerson()));
 
-        assertEquals(notExpected, actual);
+        assertNotEquals(Expected, actual);
     }
 }
