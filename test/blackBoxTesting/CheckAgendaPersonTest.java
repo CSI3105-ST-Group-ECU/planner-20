@@ -60,11 +60,15 @@ class CheckAgendaPersonTest {
             "2,2,Justin Gardener",
             "2,27,Justin Gardener", 
             "2,28,Justin Gardener",
+            "2,1,Ashley Matthews",
+            "2,2,Ashley Matthews",
+            "2,27,Ashley Matthews",
+            "2,28,Ashley Matthews",
     })
 	
 	@Order(1)
 	void PersonAgenda_ValidDaysMonthsOf28Days(String start_month, String start_day, String name) throws Exception {
-        String notExpected = ConsoleOutput.getValidCheckAgendaForPersonOutput();
+        String Expected = ConsoleOutput.getValidCheckAgendaForPersonOutput();
 
         String actual = tapSystemOutNormalized(() -> withTextFromSystemIn(
                 start_month,
@@ -72,7 +76,7 @@ class CheckAgendaPersonTest {
                 name
         ).execute(() -> planner.checkAgendaPerson()));
 
-        assertNotEquals(notExpected, actual);
+        assertEquals(Expected, actual);
     }
 
 	@Tag("28Days")
@@ -81,12 +85,13 @@ class CheckAgendaPersonTest {
     @CsvSource({
             "2,0,Justin Gardener",// Boundary Testing for Invalid Inputs (0 and 29) for months of 28 Days
             "2,29,Justin Gardener",
-            
+            "2,0, Ashley Matthews",
+            "2,29,Ashley Matthews",
     })
 	
 	@Order(2)
 	void PersonAgenda_iInValidDaysMonthsOf28Days(String start_month, String start_day, String name) throws Exception {
-        String notExpected = ConsoleOutput.getValidCheckAgendaForPersonOutput();
+        String Expected = ConsoleOutput.getValidCheckAgendaForPersonOutput();
 
         String actual = tapSystemOutNormalized(() -> withTextFromSystemIn(
                 start_month,
@@ -94,7 +99,7 @@ class CheckAgendaPersonTest {
                 name
         ).execute(() -> planner.checkAgendaPerson()));
 
-        assertEquals(notExpected, actual);
+        assertNotEquals(Expected, actual);
     }
 	
 	@Tag("29Days")
@@ -105,11 +110,15 @@ class CheckAgendaPersonTest {
             "2,2,Justin Gardener",
             "2,28,Justin Gardener",
             "2,29,Justin Gardener",
+            "2,1,Ashley Matthews",
+            "2,2,Ashley Matthews",
+            "2,28,Ashley Matthews",
+            "2,29,Ashley Matthews",
     })
 	
 	@Order(3)
 	void PersonAgenda_ValidDaysMonthsOf29Days(String start_month, String start_day, String name) throws Exception {
-        String notExpected = ConsoleOutput.getValidCheckAgendaForPersonOutput();
+        String Expected = ConsoleOutput.getValidCheckAgendaForPersonOutput();
 
         String actual = tapSystemOutNormalized(() -> withTextFromSystemIn(
                 start_month,
@@ -117,7 +126,7 @@ class CheckAgendaPersonTest {
                 name
         ).execute(() -> planner.checkAgendaPerson()));
 
-        assertNotEquals(notExpected, actual);
+        assertEquals(Expected, actual);
     }
 	
 	@Tag("29Days")
@@ -126,11 +135,14 @@ class CheckAgendaPersonTest {
     @CsvSource({
             "2,0,Justin Gardener",
             "2,30,Justin Gardener",
+            "2,0,Ashley Matthews",
+            "2,30,Ashley Matthews",
+
     })
 	
 	@Order(4)
 	void PersonAgenda_InvalidDaysMonthsOf29Days(String start_month, String start_day, String name) throws Exception {
-        String notExpected = ConsoleOutput.getValidCheckAgendaForPersonOutput();
+        String Expected = ConsoleOutput.getValidCheckAgendaForPersonOutput();
 
         String actual = tapSystemOutNormalized(() -> withTextFromSystemIn(
                 start_month,
@@ -138,7 +150,7 @@ class CheckAgendaPersonTest {
                 name
         ).execute(() -> planner.checkAgendaPerson()));
 
-        assertEquals(notExpected, actual);
+        assertNotEquals(Expected, actual);
     }
 	
 	@Tag("30Days")
@@ -154,11 +166,19 @@ class CheckAgendaPersonTest {
             "9,2,Justin Gardener",
             "9,29,Justin Gardener",
             "9,30,Justin Gardener",
+            "4,1,Ashley Matthews",
+            "4,2,Ashley Matthews",
+            "4,29,Ashley Matthews",
+            "4,30,Ashley Matthews",
+            "9,1,Ashley Matthews",
+            "9,2,Ashley Matthews",
+            "9,29,Ashley Matthews",
+            "9,30,Ashley Matthews",
     })
 	
 	@Order(5)
 	void PersonAgenda_ValidDaysMonthsOf30Days(String start_month, String start_day, String name) throws Exception {
-        String notExpected = ConsoleOutput.getValidCheckAgendaForPersonOutput();
+        String Expected = ConsoleOutput.getValidCheckAgendaForPersonOutput();
 
         String actual = tapSystemOutNormalized(() -> withTextFromSystemIn(
                 start_month,
@@ -166,7 +186,7 @@ class CheckAgendaPersonTest {
                 name
         ).execute(() -> planner.checkAgendaPerson()));
 
-        assertNotEquals(notExpected, actual);
+        assertEquals(Expected, actual);
     }
 	
 	@Tag("30Days")
@@ -178,11 +198,16 @@ class CheckAgendaPersonTest {
             "4,31,Justin Gardener",
             "9,0,Justin Gardener",
             "9,31,Justin Gardener",
+            "4,0,Ashley Matthews",
+            "4,31,Ashley Matthews",
+            "9,0,Ashley Matthews",
+            "9,31,Ashley Matthews",
+
     })
 	
 	@Order(6)
 	void PersonAgenda_InvalidDaysMonthsOf30Days(String start_month, String start_day, String name) throws Exception {
-        String notExpected = ConsoleOutput.getValidCheckAgendaForPersonOutput();
+        String Expected = ConsoleOutput.getValidCheckAgendaForPersonOutput();
 
         String actual = tapSystemOutNormalized(() -> withTextFromSystemIn(
                 start_month,
@@ -190,7 +215,7 @@ class CheckAgendaPersonTest {
                 name
         ).execute(() -> planner.checkAgendaPerson()));
 
-        assertEquals(notExpected, actual);
+        assertNotEquals(Expected, actual);
     }
 	
 	@Tag("31Days")
@@ -206,11 +231,20 @@ class CheckAgendaPersonTest {
             "10,2,Justin Gardener",
             "10,30,Justin Gardener",
             "10,31,Justin Gardener",
+            "3,1,Ashley Matthews",
+            "3,2,Ashley Matthews",
+            "3,30,Ashley Matthews",
+            "3,31,Ashley Matthews",
+            "10,1,Ashley Matthews",
+            "10,2,Ashley Matthews",
+            "10,30,Ashley Matthews",
+            "10,31,Ashley Matthews",
+
     })
 	
 	@Order(7)
 	void PersonAgenda_ValidDaysMonthsOf31Days(String start_month, String start_day, String name) throws Exception {
-        String notExpected = ConsoleOutput.getValidCheckAgendaForPersonOutput();
+        String Expected = ConsoleOutput.getValidCheckAgendaForPersonOutput();
 
         String actual = tapSystemOutNormalized(() -> withTextFromSystemIn(
                 start_month,
@@ -218,7 +252,7 @@ class CheckAgendaPersonTest {
                 name
         ).execute(() -> planner.checkAgendaPerson()));
 
-        assertNotEquals(notExpected, actual);
+        assertEquals(Expected, actual);
     }
 	
 	@Tag("InvalidMonth")
@@ -226,15 +260,114 @@ class CheckAgendaPersonTest {
     @ParameterizedTest(name = "#{index}- Invalid Test with Argument = {arguments}")
     @CsvSource({
     //BVA Test cases for April and September   
-    	"A,	2,	Justin Gardener",
-    	"B,	2,	Justin Gardener",
-    	"C,	2,	Justin Gardener",
+    	"13,2,Justin Gardener",
+    	"0,	2,Justin Gardener",
+    	"14,2,Justin Gardener",
+        "13,2,Ashley Matthews",
+        "0,	2,Ashley Matthews",
+        "14,2,Ashley Matthews",
 
     })
 	
 	@Order(8)
-	void PersonAgenda_InvalidInput(String start_month, String start_day, String name) throws Exception {
+	void PersonAgenda_InvalidMonth(String start_month, String start_day, String name) throws Exception {
         String Expected = ConsoleOutput.getINVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_MONTH();
+
+        String actual = tapSystemOutNormalized(() -> withTextFromSystemIn(
+                start_month,
+                start_day,
+                name
+        ).execute(() -> planner.checkAgendaPerson()));
+
+        assertNotEquals(Expected, actual);
+    }
+
+    @Tag("InvalidDay")
+    @DisplayName("PersonAgenda_InvalidDay")
+    @ParameterizedTest(name = "#{index}- Invalid Test with Argument = {arguments}")
+    @CsvSource({
+            //BVA Test cases for April and September
+            "13,2,Justin Gardener",
+            "0,2,Justin Gardener",
+            "14,2,Justin Gardener",
+            "13,2,Ashley Matthews",
+            "0,2,Ashley Matthews",
+            "14,2,Ashley Matthews",
+
+    })
+
+    @Order(9)
+    void PersonAgenda_InvalidDay(String start_month, String start_day, String name) throws Exception {
+        String Expected = ConsoleOutput.getINVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_DAY();
+
+        String actual = tapSystemOutNormalized(() -> withTextFromSystemIn(
+                start_month,
+                start_day,
+                name
+        ).execute(() -> planner.checkAgendaPerson()));
+
+        assertEquals(Expected, actual);
+    }
+
+    @Tag("InvalidPerson")
+    @DisplayName("PersonAgenda_InvalidPerson")
+    @ParameterizedTest(name = "#{index}- Invalid Test with Argument = {arguments}")
+    @CsvSource({
+            //BVA Test cases for April and September
+            "1,2,Justin",
+            "1,2,Chris Raven",
+            "1,2,Darth Vader",
+    })
+
+    @Order(10)
+    void PersonAgenda_InvalidPerson(String start_month, String start_day, String name) throws Exception {
+        String Expected = ConsoleOutput.getINVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_PERSON();
+
+        String actual = tapSystemOutNormalized(() -> withTextFromSystemIn(
+                start_month,
+                start_day,
+                name
+        ).execute(() -> planner.checkAgendaPerson()));
+
+        assertNotEquals(Expected, actual);
+    }
+
+    @Tag("InvalidInputType_Day")
+    @DisplayName("PersonAgenda_InvalidInputType_Day")
+    @ParameterizedTest(name = "#{index}- Invalid Test with Argument = {arguments}")
+    @CsvSource({
+            //BVA Test cases for April and September
+            "A,2,Justin Gardener",
+            "null,2,Justin Gardener",
+            "$,2,Justin Gardener",
+    })
+
+    @Order(11)
+    void PersonAgenda_InvalidInputType_Day(String start_month, String start_day, String name) throws Exception {
+        String Expected = ConsoleOutput.getINVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_PERSON();
+
+        String actual = tapSystemOutNormalized(() -> withTextFromSystemIn(
+                start_month,
+                start_day,
+                name
+        ).execute(() -> planner.checkAgendaPerson()));
+
+        assertNotEquals(Expected, actual);
+    }
+
+    @Tag("InvalidInputType_Month")
+    @DisplayName("PersonAgenda_InvalidInputType_Month")
+    @ParameterizedTest(name = "#{index}- Invalid Test with Argument = {arguments}")
+    @CsvSource({
+            //BVA Test cases for April and September
+            "1,A,Justin Gardener",
+            "1,null,Justin Gardener",
+            "1,$,Justin Gardener",
+    })
+
+    @Order(12)
+    void PersonAgenda_InvalidInputType_Month(String start_month, String start_day, String name) throws Exception {
+        String Expected = ConsoleOutput.getINVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_PERSON();
 
         String actual = tapSystemOutNormalized(() -> withTextFromSystemIn(
                 start_month,
