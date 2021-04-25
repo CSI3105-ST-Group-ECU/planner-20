@@ -72,7 +72,32 @@ public class ConsoleOutput {
     //TODO: Check if these are needed by the others if not I will remove 🚀🚀🚀🚀
     private static final String VALID_CHECK_ROOM_OUTPUT = "";
     private static final String VALID_CHECK_PERSON_OUTPUT = "";
-    private static final String VALID_CHECK_AGENDA_FOR_ROOM_OUTPUT = "";
+
+    private static final String VALID_CHECK_AGENDA_FOR_ROOM_OUTPUT = "\n"
+            + "Enter the month (1-12): \n"
+            + "\n"
+            + "Enter the day (1-31), or all to see the whole month: "
+            + "\n"
+            + "Which of the following rooms are you interested in?\n"
+            + "JO18.330\n"
+            + "JO7.221\n"
+            + "JO15.236\n"
+            + "JO1.230\n"
+            + "JO34.536\n"
+            + "JO19.230\n"
+            + "ML5.123\n"
+            + "ML18.330\n"
+            + "ML21.520\n"
+            + "ML13.213\n"
+            + "ML21.310\n"
+            + "ML13.218\n"
+            + "\n"
+            + "Enter a room ID as shown in the list, or cancel to cancel the request: \n"
+            + "No Meetings booked on this date."
+            + "\n"
+            + "\n"
+            + "\n";
+
     private static final String VALID_CHECK_AGENDA_FOR_PERSON_OUTPUT = "\n"
     		+ "Enter the month (1-12): \n"
     		+ "\n"
