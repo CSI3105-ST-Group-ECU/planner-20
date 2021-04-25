@@ -104,6 +104,7 @@ public class ConsoleOutput {
 
     private static final String INVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_PERSON = "\n" +
             "Enter the month (1-12): \n" +
+            "\n"+
             "Enter the day (1-31), or all to see the whole month: \n" +
             "Which of the following people are you interested in?\n" +
             "Justin Gardener\n" +
@@ -120,7 +121,8 @@ public class ConsoleOutput {
             "Travis Colin\n" +
             "Ashley Martin\n" +
             "\n" +
-            "Enter a name from the list provided, or cancel to cancel the request: ";
+            "Enter a name from the list provided, or cancel to cancel the request: \n" +
+            "Requested employee does not exist\n";
     
 //THESE ARE THE GETTERS FOR THE SOFTWARE
     
