@@ -154,25 +154,67 @@ public class ConsoleOutput {
             + "Requested room does not exist\n";
 
     private static final String VALID_CHECK_AGENDA_FOR_PERSON_OUTPUT = "\n"
-    		+ "Enter the month (1-12): \n"
-    		+ "\n"
-    		+ "Enter the day (1-31), or all to see the whole month: \n"
-    		+ "Which of the following people are you interested in?\n"
-    		+ "Justin Gardener\n"
-    		+ "Ashley Matthews\n"
-    		+ "Mary Jane Cook\n"
-    		+ "Rose Austin\n"
-    		+ "Mike Smith\n"
-    		+ "Helen West\n"
-    		+ "Steven Lewis\n"
-    		+ "Edith Cowan\n"
-    		+ "Mark Colin\n"
-    		+ "Jacquie Martin\n"
-    		+ "Jaci Johnston\n"
-    		+ "Travis Colin\n"
-    		+ "Ashley Martin\n"
-    		+ "\n"
-    		+ "Enter a name from the list provided, or cancel to cancel the request: \n";
+            + "Enter the month (1-12): \n"
+            + "\n"
+            + "Enter the day (1-31), or all to see the whole month: \n"
+            + "Which of the following people are you interested in?\n"
+            + "Justin Gardener\n"
+            + "Ashley Matthews\n"
+            + "Mary Jane Cook\n"
+            + "Rose Austin\n"
+            + "Mike Smith\n"
+            + "Helen West\n"
+            + "Steven Lewis\n"
+            + "Edith Cowan\n"
+            + "Mark Colin\n"
+            + "Jacquie Martin\n"
+            + "Jaci Johnston\n"
+            + "Travis Colin\n"
+            + "Ashley Martin\n"
+            + "\n"
+            + "Enter a name from the list provided, or cancel to cancel the request: \n"
+            + "No Meetings booked on this date.\n\n\n";
+
+    private static final String INVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_MONTH = "\n"
+            + "Enter the month (1-12): ";
+
+    private static final String INVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_DAY = " \n" +
+            "Enter the month (1-12): \n" +
+            "Please enter a number from 0 - 6";
+
+    private static final String INVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_PERSON = "\n" +
+            "Enter the month (1-12): \n" +
+            "\n"+
+            "Enter the day (1-31), or all to see the whole month: \n" +
+            "Which of the following people are you interested in?\n" +
+            "Justin Gardener\n" +
+            "Ashley Matthews\n" +
+            "Mary Jane Cook\n" +
+            "Rose Austin\n" +
+            "Mike Smith\n" +
+            "Helen West\n" +
+            "Steven Lewis\n" +
+            "Edith Cowan\n" +
+            "Mark Colin\n" +
+            "Jacquie Martin\n" +
+            "Jaci Johnston\n" +
+            "Travis Colin\n" +
+            "Ashley Martin\n" +
+            "\n" +
+            "Enter a name from the list provided, or cancel to cancel the request: \n" +
+            "Requested employee does not exist\n";
+
+    public static String getINVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_MONTH() {
+        return INVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_MONTH;
+    }
+
+    public static String getINVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_DAY() {
+        return INVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_DAY;
+    }
+
+    public static String getINVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_PERSON() {
+        return INVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_PERSON;
+    }
 
     public static String getValidScheduledMeetingOutput() {
         return VALID_SCHEDULED_MEETING_OUTPUT;
