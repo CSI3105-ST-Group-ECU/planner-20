@@ -330,14 +330,16 @@ class CheckAgendaPersonTest {
     @Order(11)
     void PersonAgenda_InvalidInputType_Day(String start_month, String start_day, String name) throws Exception {
         String Expected = ConsoleOutput.getINVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_PERSON();
+        assertDoesNotThrow(() ->
+        {
+            String actual = tapSystemOutNormalized(() -> withTextFromSystemIn(
+                    start_month,
+                    start_day,
+                    name
+            ).execute(() -> planner.checkAgendaPerson()));
 
-        String actual = tapSystemOutNormalized(() -> withTextFromSystemIn(
-                start_month,
-                start_day,
-                name
-        ).execute(() -> planner.checkAgendaPerson()));
-
-        assertNotEquals(Expected, actual);
+            assertNotEquals(Expected, actual);
+        });
     }
 
     @Tag("InvalidInputType_Month")
