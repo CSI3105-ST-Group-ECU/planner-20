@@ -13,13 +13,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.mockito.Mockito;
 
-<<<<<<< HEAD
-import static org.junit.jupiter.api.Assertions.fail;
-=======
 import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
->>>>>>> jake-branch
 
 /**
  * @author Jake and Craig
