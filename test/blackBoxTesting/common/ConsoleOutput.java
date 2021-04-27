@@ -107,6 +107,39 @@ public class ConsoleOutput {
             "The people available to attend at that time are:\n" +
             "Month does not exist.\n";
 
+    private static final String VALID_CHECK_PERSON_OUTPUT_INVALID_DAY = "\n" +
+            "Enter the month of the meeting (1-12): \n" +
+            "\n" +
+            "Enter the day of the meeting (1-31): \n" +
+            "\n" +
+            "Enter the starting hour of the meeting (0-23): \n" +
+            "\n" +
+            "Enter the ending hour of the meeting (0-23): \n" +
+            "The people available to attend at that time are:\n" +
+            "Day does not exist.\n";
+
+    private static final String VALID_CHECK_PERSON_OUTPUT_INVALID_HOUR = "\n" +
+            "Enter the month of the meeting (1-12): \n" +
+            "\n" +
+            "Enter the day of the meeting (1-31): \n" +
+            "\n" +
+            "Enter the starting hour of the meeting (0-23): \n" +
+            "\n" +
+            "Enter the ending hour of the meeting (0-23): \n" +
+            "The people available to attend at that time are:\n" +
+            "Illegal hour.\n";
+
+    private static final String VALID_CHECK_PERSON_OUTPUT_ILLOGICAL_HOUR = "\n" +
+            "Enter the month of the meeting (1-12): \n" +
+            "\n" +
+            "Enter the day of the meeting (1-31): \n" +
+            "\n" +
+            "Enter the starting hour of the meeting (0-23): \n" +
+            "\n" +
+            "Enter the ending hour of the meeting (0-23): \n" +
+            "The people available to attend at that time are:\n" +
+            "Meeting starts before it ends.\n";
+
     private static final String VALID_CHECK_AGENDA_FOR_ROOM_OUTPUT = "\n"
             + "Enter the month (1-12): \n"
             + "\n"
@@ -234,6 +267,18 @@ public class ConsoleOutput {
 
     public static String getValidCheckPersonOutputInvalidMonth() {
         return VALID_CHECK_PERSON_OUTPUT_INVALID_MONTH;
+    }
+
+    public static String getValidCheckPersonOutputInvalidDay() {
+        return VALID_CHECK_PERSON_OUTPUT_INVALID_DAY;
+    }
+
+    public static String getValidCheckPersonOutputInvalidHour() {
+        return VALID_CHECK_PERSON_OUTPUT_INVALID_HOUR;
+    }
+
+    public static String getValidCheckPersonOutputIllogicalHour() {
+        return VALID_CHECK_PERSON_OUTPUT_ILLOGICAL_HOUR;
     }
 
     public static String getValidCheckAgendaForRoomOutput() {
