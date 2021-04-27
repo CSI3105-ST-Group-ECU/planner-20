@@ -1,6 +1,4 @@
-/**
- *
- */
+
 package blackBoxTesting;
 
 import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOutNormalized;

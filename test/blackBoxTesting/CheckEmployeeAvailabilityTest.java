@@ -1,3 +1,4 @@
+
 package blackBoxTesting;
 
 import au.edu.sccs.csp3105.NBookingPlanner.Planner;
