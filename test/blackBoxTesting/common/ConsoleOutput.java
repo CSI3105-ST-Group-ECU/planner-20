@@ -70,7 +70,28 @@ public class ConsoleOutput {
             "\n" +
             "Enter a person's name, or cancel to cancel the request: \n";
     //TODO: Check if these are needed by the others if not I will remove 🚀🚀🚀🚀
-    private static final String VALID_CHECK_ROOM_OUTPUT = "";
+    private static final String VALID_CHECK_ROOM_OUTPUT =
+            "\n" +
+                    "Enter the month of the meeting (1-12): \n" +
+                    "\n" +
+                    "Enter the day of the meeting (1-31): \n" +
+                    "\n" +
+                    "Enter the starting hour of the meeting (0-23): \n" +
+                    "\n" +
+                    "Enter the ending hour of the meeting (0-23): \n" +
+                    "The rooms available at the specified time are:\n" +
+                    "JO18.330\n" +
+                    "JO7.221\n" +
+                    "JO15.236\n" +
+                    "JO1.230\n" +
+                    "JO34.536\n" +
+                    "JO19.230\n" +
+                    "ML5.123\n" +
+                    "ML18.330\n" +
+                    "ML21.520\n" +
+                    "ML13.213\n" +
+                    "ML21.310\n" +
+                    "ML13.218\n";
 
     private static final String VALID_CHECK_PERSON_OUTPUT = "\n" +
             "Enter the month of the meeting (1-12): \n" +
@@ -237,6 +258,8 @@ public class ConsoleOutput {
             "Enter a name from the list provided, or cancel to cancel the request: \n" +
             "Requested employee does not exist\n";
 
+
+
     public static String getINVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_MONTH() {
         return INVALID_CHECK_AGENDA_FOR_PERSON_OUTPUT_INVALID_MONTH;
     }
@@ -293,3 +316,4 @@ public class ConsoleOutput {
         return VALID_CHECK_AGENDA_FOR_PERSON_OUTPUT;
     }
 }
+
