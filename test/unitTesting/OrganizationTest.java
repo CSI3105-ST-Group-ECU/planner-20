@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.fail;
 
 /**
- * @author Chris
+ * @author Craig + Jake
  *
  */
 class OrganizationTest {
