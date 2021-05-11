@@ -27,7 +27,7 @@ class MeetingTest {
 			add(new Person("Person2"));
 		}};
 
-	@DisplayName("MEE-01:MEE-05 - Constructor Testing")
+	@DisplayName("MEE-01:05 - Constructor Testing")
 	@Test
 	void MEE_Constructor_Tests() {
 		//MEE-1
@@ -36,18 +36,35 @@ class MeetingTest {
 		//MEE-2
 		Meeting mee2 = new Meeting(month, day);
 		assertTrue(mee2 != null, "MEE-02 failed.");
+		assertTrue(mee2.getMonth() == month, "MEE-02 failed.");
+		assertTrue(mee2.getDay() == day, "MEE-02 failed.");
 		//MEE-3
 		Meeting mee3 = new Meeting(month, day, description);
-		assertTrue(mee3 != null, "MEE-3 failed.");
+		assertTrue(mee3 != null, "MEE-03 failed.");
+		assertTrue(mee3.getMonth() == month, "MEE-03 failed.");
+		assertTrue(mee3.getDay() == day, "MEE-03 failed.");
+		assertTrue(mee3.getDescription() == description, "MEE-03 failed.");
 		//MEE-4
 		Meeting mee4 = new Meeting(month, day, start, end);
 		assertTrue(mee4 != null, "MEE-04 failed.");
+		assertTrue(mee4.getMonth() == month, "MEE-04 failed.");
+		assertTrue(mee4.getDay() == day, "MEE-04 failed.");
+		assertTrue(mee4.getStartTime() == start, "MEE-04 failed.");
+		assertTrue(mee4.getEndTime() == end, "MEE-04 failed.");
 		//MEE-5
 		Meeting mee5 = new Meeting(month, day, start, end, attendees, room, description);
 		assertTrue(mee5 != null, "MEE-05 failed.");
+		assertTrue(mee5.getMonth() == month, "MEE-05 failed.");
+		assertTrue(mee5.getDay() == day, "MEE-05 failed.");
+		assertTrue(mee5.getStartTime() == start, "MEE-05 failed.");
+		assertTrue(mee5.getEndTime() == end, "MEE-05 failed.");
+		assertTrue(mee5.getAttendees() == attendees, "MEE-05 failed.");
+		assertTrue(mee5.getRoom() == room, "MEE-05 failed.");
+		assertTrue(mee5.getDescription() == description, "MEE-05 failed.");
+
 	}
 
-	@DisplayName("MEE-06:MEE-07 - Attendee Function Tests")
+	@DisplayName("MEE-06:07 - Attendee Function Tests")
 	@Test
 	void MEE_Attendee_Function_Tests(){
 		//MEE-6
