@@ -33,31 +33,31 @@ class CalendarTest {
 	 */
 	@BeforeEach
 	void setUp() throws Exception {
+	}
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@AfterEach
+	void tearDown () throws Exception {
 
-		/**
-		 * @throws java.lang.Exception
-		 */
-		@AfterEach
-		void tearDown () throws Exception {
-		}
+	}
 
-
-		@DisplayName("CAL-1")
-		@Test
-		// Test creation of the Calendar Object
-		void Test_initialisation_of_no_arg_calendar () {
-			Calendar calendar = new Calendar();
-			assertTrue(calendar != null);
-		}
+	@DisplayName("CAL-1")
+	@Test
+	// Test creation of the Calendar Object
+	void Test_initialisation_of_no_arg_calendar () {
+		Calendar calendar = new Calendar();
+		assertTrue(calendar != null);
+	}
 
 		@DisplayName("CAL-2")
 		@Test
 		// Test if Busy returns False for a day not already booked
 		void Test_isBusy_Returns_False () throws ConflictsException {
-			assertThrows(ConflictsException.class), () -> calendar.isBusy(1, 1, 2, 1), "FAILED";
+			assertThrows(ConflictsException.class, () -> {calendar.isBusy(1, 1, 2, 1);}, "FAILED");
 		}
 	}
-}
+
 
 
 
