@@ -83,9 +83,9 @@ class MeetingTest {
 	@Test
 	void MEE_Print_Function_Tests(){
 		//MEE-8
-		String output = "Month is 1, Day is 1, Time slot:1 - 2, Room No:Test-01: Test String\nAttending: Person1,Person2";
+		String expected = "Month is 1, Day is 1, Time slot:1 - 2, Room No:Test-01: Test String\nAttending: Person1,Person2";
 		Meeting mee8 = new Meeting(month, day, start, end, attendees, room, description);
-		assertEquals(mee8.toString(), output, "MEE-08 failed.");
+		assertEquals(mee8.toString(), expected, "MEE-08 failed.");
 	}
 
 }
