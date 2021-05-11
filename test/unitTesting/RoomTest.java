@@ -77,7 +77,7 @@ class RoomTest {
 		try {
 			assertFalse(room.isBusy(1, 1, 1, 2), "ROO-07 failed.");
 		} catch (ConflictsException e) {
-			fail("ROO-08 failed");
+			fail("ROO-07 failed");
 		}
 		//ROO-08
 		assertThrows(ConflictsException.class, () -> {room.isBusy(1, 1, 2, 1);},
