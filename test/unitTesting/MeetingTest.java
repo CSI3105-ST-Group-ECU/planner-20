@@ -21,7 +21,7 @@ class MeetingTest {
 	int end = 2;
 	String description = "Test String";
 	Room room = new Room("Test-01");
-	ArrayList<Person> attendees = new ArrayList<>(){
+	ArrayList<Person> attendees = new ArrayList(){
 		{
 			add(new Person("Person1"));
 			add(new Person("Person2"));
