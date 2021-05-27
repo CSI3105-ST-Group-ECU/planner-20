@@ -81,25 +81,37 @@ class CalendarTest {
 	@DisplayName("CAL-4 - isBusy() Exception Test")
 	@Test
 	@Order(3)
-	// Test throwing an acception if the Start Time is laster than the End time
+	// Test throwing an Exception if the Start Time is Later than the End time
 	void test_isBusy_ThrowsException () throws ConflictsException {
-		assertThrows(ConflictsException.class, () -> {calendar.isBusy(1, 1, 5, 1);}, "FAILED");
+		Meeting CAL4 = new Meeting(1,1,1,1);
+		assertThrows(ConflictsException.class, () -> {
+			calendar.isBusy(0, 0, 0, 0);
+		}, "FAILED");
 	}
 
-	@DisplayName("CAL-5:9 - checkTimes() Exception Test")
+	@DisplayName("CAL-5 - checkTimes() Not Exception Test")
 	@Test
 	@Order(4)
-	//Confirm that an exception is thrown for tests 5 through 9
+		//Confirm that an exception is thrown for test 5
+	void test_CheckTimes_ValidEntries() throws ConflictsException {
+		assertThrows(ConflictsException.class,() -> {calendar.checkTimes(1,1,1,1);}, "FAILED");
+	}
+
+	@DisplayName("CAL-6:9 - checkTimes() Exception Test")
+	@Test
+	@Order(5)
+	//Confirm that an exception is thrown for tests 6 through 9
 	void test_CheckTimes_InvalidEntries() throws ConflictsException {
 		assertThrows(ConflictsException.class, () -> {Calendar.checkTimes(1,0,1,1);},"FAILED");
 		assertThrows(ConflictsException.class, () -> {Calendar.checkTimes(0,1,1,1);},"FAILED");
 		assertThrows(ConflictsException.class, () -> {Calendar.checkTimes(1,1,-1,1);},"FAILED");
 		assertThrows(ConflictsException.class, () -> {Calendar.checkTimes(1,0,1,3);},"FAILED");
+
 	}
 
 	@DisplayName("CAL-10 - addMeeting() Valid Test")
 	@Test
-	@Order(5)
+	@Order(6)
 	void addMeeting_Test() throws ConflictsException {
 	//CAL-10
 	Meeting CAL10 = new Meeting(month, day, start, end, attendees, room, description);
@@ -109,7 +121,7 @@ class CalendarTest {
 
 	@DisplayName("CAL-11:13 - addMeeting() invalid Tests")
 	@Test
-	@Order(6)
+	@Order(7)
 	void addMeeting_ExceptionTest() throws ConflictsException{
 		//CAL11
 		Meeting CAL11 = new Meeting(month, -1, start, end, attendees, room, description);
@@ -127,7 +139,7 @@ class CalendarTest {
 
 	@DisplayName("CAL-14 - printAgenda() valid Tests")
 	@Test
-	@Order(7)
+	@Order(8)
 	void printAgenda_ValidTests() throws ConflictsException {
 		//CAL14
 		assertTrue(calendar.printAgenda(1) != null);
@@ -135,7 +147,7 @@ class CalendarTest {
 
 	@DisplayName("CAL-15 - printAgenda() throws exception")
 	@Test
-	@Order(8)
+	@Order(9)
 	void printAgenda_invalidTests() throws ConflictsException {
 		//CAL15
 		assertThrows(IndexOutOfBoundsException.class, () -> {calendar.printAgenda(-1);},"FAILED");
@@ -144,12 +156,12 @@ class CalendarTest {
 
 	@DisplayName("CAL-16:17 - printAgenda(Month,Day) valid tests")
 	@Test
-	@Order(9)
+	@Order(10)
 	void printAgenda_Month_Day_valid_tests() throws ConflictsException {
 		//CAL16 We assert that printing the agenda works without issues
 		assertTrue(calendar.printAgenda(1,1) != null);
 
-		//CAL17 We get the expected scrting back if there are no bookings on the day
+		//CAL17 We get the expected string back if there are no bookings on the day
 		String expected = "No Meetings booked on this date.\n" +
 				"\n";
 
@@ -158,7 +170,7 @@ class CalendarTest {
 
 	@DisplayName("CAL-18 - getMeeting(Month,Day) Valid Inputs")
 	@Test
-	@Order(10)
+	@Order(11)
 	void getMeeting_month_day_index_test() throws ConflictsException {
 	//CAL18 We expect this to work, checking that the meeting has been added
 	Meeting CAL18 = new Meeting(1, 1, start, end, attendees, room, description);
@@ -169,7 +181,7 @@ class CalendarTest {
 
 	@DisplayName("CAL-19 - getMeeting(Month,Day) throws exception")
 	@Test
-	@Order(11)
+	@Order(12)
 	void getMeeting_month_day_index_throwsexception() throws ConflictsException {
 		//CAL19. There are no meetings booked for January 1st, so we expect this to throw an exception
 		assertThrows(IndexOutOfBoundsException.class, () -> {calendar.getMeeting(1,1,0);},"Failed");
@@ -177,6 +189,36 @@ class CalendarTest {
 		assertThrows(IndexOutOfBoundsException.class, () -> {calendar.getMeeting(1,1,2);},"Failed");
 		assertThrows(IndexOutOfBoundsException.class, () -> {calendar.getMeeting(1,1,4);},"Failed");
 	}
+
+	@DisplayName("CAL-20 - removeMeeting() Successful")
+	@Test
+	@Order(13)
+	void removeMeeting() throws ConflictsException {
+		Meeting CAL20 = new Meeting(2,2,2,2);
+		Meeting CAL20_1 = new Meeting(2,2,3,3);
+
+		try {
+			assertThrows(ConflictsException.class, () -> calendar.removeMeeting(2,2,0));
+			assertThrows(ConflictsException.class, () -> calendar.removeMeeting(2,2,1));
+
+		} catch (Exception e) {
+			fail("CAL-20 FAILED");
+		}
+	}
+
+	@DisplayName("CAL-21 - removeMeeting() Exception")
+	@Test
+	@Order(14)
+	void removeMeetingException() throws ConflictsException {
+		Meeting CAL21 = new Meeting(2,2,2,2);
+		Meeting CAL21_1 = new Meeting(2,2,3,3);
+
+		try {
+			assertThrows(ConflictsException.class, () -> calendar.removeMeeting(2,2,3));
+			assertThrows(ConflictsException.class, () -> calendar.removeMeeting(2,2,4));
+
+		} catch (Exception e) {
+			fail("CAL-21 FAILED");
+		}
+	}
 }
-
-
