@@ -94,7 +94,7 @@ class CalendarTest {
 	@Order(4)
 		//Confirm that an exception is thrown for test 5
 	void test_CheckTimes_ValidEntries() throws ConflictsException {
-		assertThrows(ConflictsException.class,() -> {calendar.checkTimes(1,1,1,1);}, "FAILED");
+		assertThrows(ConflictsException.class,() -> {calendar.checkTimes(1,1,2,1);}, "FAILED");
 	}
 
 	@DisplayName("CAL-6:9 - checkTimes() Exception Test")
@@ -190,7 +190,7 @@ class CalendarTest {
 		assertThrows(IndexOutOfBoundsException.class, () -> {calendar.getMeeting(1,1,4);},"Failed");
 	}
 
-	@DisplayName("CAL-20 - removeMeeting() Successful")
+	@DisplayName("CAL-20 - removeMeeting() Exception Tests")
 	@Test
 	@Order(13)
 	void removeMeeting() throws ConflictsException {
@@ -198,27 +198,11 @@ class CalendarTest {
 		Meeting CAL20_1 = new Meeting(2,2,3,3);
 
 		try {
-			assertThrows(ConflictsException.class, () -> calendar.removeMeeting(2,2,0));
-			assertThrows(ConflictsException.class, () -> calendar.removeMeeting(2,2,1));
+			assertThrows(IndexOutOfBoundsException.class, () -> calendar.removeMeeting(2,2,0));
+			assertThrows(IndexOutOfBoundsException.class, () -> calendar.removeMeeting(2,2,1));
 
 		} catch (Exception e) {
 			fail("CAL-20 FAILED");
-		}
-	}
-
-	@DisplayName("CAL-21 - removeMeeting() Exception")
-	@Test
-	@Order(14)
-	void removeMeetingException() throws ConflictsException {
-		Meeting CAL21 = new Meeting(2,2,2,2);
-		Meeting CAL21_1 = new Meeting(2,2,3,3);
-
-		try {
-			assertThrows(ConflictsException.class, () -> calendar.removeMeeting(2,2,3));
-			assertThrows(ConflictsException.class, () -> calendar.removeMeeting(2,2,4));
-
-		} catch (Exception e) {
-			fail("CAL-21 FAILED");
 		}
 	}
 }
