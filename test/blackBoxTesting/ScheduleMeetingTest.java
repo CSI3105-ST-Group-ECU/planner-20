@@ -1,15 +1,20 @@
 
 package blackBoxTesting;
 
-import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
-import static org.junit.jupiter.api.Assertions.*;
-
 import au.edu.sccs.csp3105.NBookingPlanner.Planner;
 import blackBoxTesting.common.ConsoleOutput;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.mockito.Mockito;
+
+import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOutNormalized;
+import static com.github.stefanbirkner.systemlambda.SystemLambda.withTextFromSystemIn;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 /**
  * @author Craig

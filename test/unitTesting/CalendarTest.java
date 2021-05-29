@@ -6,7 +6,6 @@ package unitTesting;
 import au.edu.sccs.csp3105.NBookingPlanner.*;
 import org.junit.jupiter.api.*;
 
-
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -214,8 +213,8 @@ class CalendarTest {
 		Meeting CAL21_1 = new Meeting(2,2,3,3);
 
 		try {
-			assertThrows(ConflictsException.class, () -> calendar.removeMeeting(2,2,3));
-			assertThrows(ConflictsException.class, () -> calendar.removeMeeting(2,2,4));
+			assertThrows(IndexOutOfBoundsException.class, () -> calendar.removeMeeting(2,2,3));
+			assertThrows(IndexOutOfBoundsException.class, () -> calendar.removeMeeting(2,2,4));
 
 		} catch (Exception e) {
 			fail("CAL-21 FAILED");

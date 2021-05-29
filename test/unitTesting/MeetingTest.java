@@ -3,11 +3,13 @@ package unitTesting;
 import au.edu.sccs.csp3105.NBookingPlanner.Meeting;
 import au.edu.sccs.csp3105.NBookingPlanner.Person;
 import au.edu.sccs.csp3105.NBookingPlanner.Room;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * @author Jack + Chris

@@ -13,7 +13,6 @@ import org.mockito.Mockito;
 
 import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOutNormalized;
 import static com.github.stefanbirkner.systemlambda.SystemLambda.withTextFromSystemIn;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
