@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package blackBoxTesting;
 
 import au.edu.sccs.csp3105.NBookingPlanner.Planner;
@@ -35,7 +33,7 @@ class CheckAgendaRoomTest {
 		planner = null;
 	}
 
-	@DisplayName("Room_Valid_Months")
+	@DisplayName("AgendaRoom BA: Month valid")
 	@ParameterizedTest(name = "#{index}- Test with Argument = {arguments}")
 	@CsvSource({
 			"1, 1, JO18.330",
@@ -53,7 +51,7 @@ class CheckAgendaRoomTest {
 		assertEquals(expected, actual,  "\n[ERROR][MONTH = "+month+"] Unexpected result for valid Input.\n");
 	}
 
-	@DisplayName("Room_Invalid_Months")
+	@DisplayName("AgendaRoom BA: Month invalid")
 	@ParameterizedTest(name = "#{index}- Test with Argument = {arguments}")
 	@CsvSource({
 			"0, 1, JO18.330",
@@ -69,7 +67,7 @@ class CheckAgendaRoomTest {
 		assertNotEquals(expected, actual, "\n[ERROR][MONTH = "+month+"] No error message thrown for Invalid Input.\n");
 	}
 
-	@DisplayName("Room_Valid_Days_Jan")
+	@DisplayName("AgendaRoom BA: Days valid")
 	@ParameterizedTest(name = "#{index}- Test with Argument = {arguments}")
 	@CsvSource({
 			//january
@@ -144,7 +142,7 @@ class CheckAgendaRoomTest {
 		assertEquals(expected, actual, "\n[ERROR][MONTH = "+month+", DAY = "+month+"] Unexpected result for valid Input.\n");
 	}
 
-	@DisplayName("Room_Invalid_Days_Jan")
+	@DisplayName("AgendaRoom BA: Days invalid")
 	@ParameterizedTest(name = "#{index}- Test with Argument = {arguments}")
 	@CsvSource({
 			//january
@@ -194,7 +192,7 @@ class CheckAgendaRoomTest {
 		assertNotEquals(expected, actual, "\n[ERROR][MONTH = "+month+", DAY = "+month+"] No error message thrown for Invalid Input.\n");
 	}
 
-	@DisplayName("Room_Valid_Rooms")
+	@DisplayName("AgendaRoom BA: Rooms valid")
 	@ParameterizedTest(name = "#{index}- Test with Argument = {arguments}")
 	@CsvSource({
 			"1, 1, JO18.330",
@@ -220,7 +218,7 @@ class CheckAgendaRoomTest {
 		assertEquals(expected, actual, "\n[ERROR][ROOM = "+room+"] Unexpected result for valid Input.\n");
 	}
 
-	@DisplayName("Room_Invalid_Rooms")
+	@DisplayName("AgendaRoom BA: Rooms invalid")
 	@ParameterizedTest(name = "#{index}- Test with Argument = {arguments}")
 	@CsvSource({
 			"1, all, ml13.218",

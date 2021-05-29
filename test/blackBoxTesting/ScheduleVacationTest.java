@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package blackBoxTesting;
 
 import au.edu.sccs.csp3105.NBookingPlanner.Planner;
@@ -15,6 +13,7 @@ import org.mockito.Mockito;
 
 import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOutNormalized;
 import static com.github.stefanbirkner.systemlambda.SystemLambda.withTextFromSystemIn;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
@@ -63,16 +62,14 @@ class ScheduleVacationTest {
     @CsvSource({
     	"56,15,5,25,Edith Cowan", //Invalid values for start_month
     	"-3,15,5,25,Edith Cowan",
-    	
     	"5,250,5,25,Edith Cowan", //Invalid values for start_day
+    	"5,37,5,25,Edith Cowan", //Invalid values for start_day
     	"5,0,5,25,Edith Cowan",
-    	
     	"5,15,2235,25,Edith Cowan", //Invalid values for end_month
     	"5,15,-2235,25,Edith Cowan",
-    	
-    	"5,15,5,10448,Edith Cowan", //Invalid values for end_day
+		"5,15,5,10448,Edith Cowan", //Invalid values for end_day
+    	"5,15,5,55,Edith Cowan", //Invalid values for end_day
     	"5,15,5,-1,Edith Cowan",
-    	
     	"5,15,5,25,Obama" //Invalid value for name
     })
     
@@ -103,21 +100,24 @@ class ScheduleVacationTest {
     	"2,15,5,25,Edith Cowan",
     	"11,15,11,25,Edith Cowan", //For the last two of these, end_month is changed too so that the start date is not after the end date
     	"12,15,12,25,Edith Cowan",
-    	
     	"5,1,5,25,Edith Cowan", //Valid BVA for start_day
     	"5,2,5,25,Edith Cowan",
     	"5,29,6,25,Edith Cowan", //For the last two of these, end_month is changed so that the start date is not after the end date
     	"5,30,6,25,Edith Cowan",
-    	
     	"4,15,1,25,Edith Cowan", //Valid BVA for end_month
     	"4,15,2,25,Edith Cowan", //For the first two of these, start_month is changed so that the start date is not after the end date
+    	"5,30,6,25,Edith Cowan", //For the last two of these, end_month is changed so that the start date is not after the end date
+    	"5,31,6,25,Edith Cowan",
+    	"1,15,1,25,Edith Cowan", //Valid BVA for end_month
+    	"1,15,2,25,Edith Cowan", //For the first two of these, start_month is changed so that the start date is not after the end date
     	"5,15,11,25,Edith Cowan",
     	"5,15,12,25,Edith Cowan",
-    	
     	"4,15,5,1,Edith Cowan", //Valid BVA for end_day
     	"4,15,5,2,Edith Cowan", //For the first two of these, start_month is changed so that the start date is not after the end date
-    	"5,15,5,29,Edith Cowan", 
+    	"5,15,5,29,Edith Cowan",
     	"5,15,5,30,Edith Cowan",
+    	"5,15,5,30,Edith Cowan",
+    	"5,15,5,31,Edith Cowan",
     })
     
     void bva_valid(String start_month, String start_day, String end_month, String end_day, String name) throws Exception{
@@ -140,15 +140,14 @@ class ScheduleVacationTest {
     @CsvSource({
     	"0,15,5,25,Edith Cowan", //Invalid BVA for start_month
     	"13,15,5,25,Edith Cowan",
-    	
     	"5,0,5,25,Edith Cowan", //Invalid BVA for start_day
     	"5,31,5,25,Edith Cowan",
-    	
+    	"5,32,5,25,Edith Cowan",
     	"5,15,0,25,Edith Cowan", //Invalid BVA for end_month
     	"5,15,13,25,Edith Cowan",
-    	
     	"5,15,5,0,Edith Cowan", //Invalid BVA for end_day
     	"5,15,5,31,Edith Cowan",
+    	"5,15,5,32,Edith Cowan",
     })
     
     void bva_invalid(String start_month, String start_day, String end_month, String end_day, String name) throws Exception{
