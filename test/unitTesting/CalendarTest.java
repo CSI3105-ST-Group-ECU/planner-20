@@ -26,7 +26,7 @@ class CalendarTest {
 	String description = "Test String";
 	Room room = new Room("Test-01");
 	Person person = new Person("TestPerson");
-	ArrayList<Person> attendees = new ArrayList<>(){
+	ArrayList<Person> attendees = new ArrayList(){
 		{
 			add(new Person("Person1"));
 			add(new Person("Person2"));
